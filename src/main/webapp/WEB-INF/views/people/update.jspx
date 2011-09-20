@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_de_goldstift_photoo_domain_Person" modelAttribute="person" path="/people" versionField="Version" z="7vKAnN3EUWTZqK6EnU+t65jftoU=">
+        <field:input field="lastname" id="c_de_goldstift_photoo_domain_Person_lastname" min="2" required="true" z="SxPdTcglbx/oMGb3iyd+ADHJ/5s="/>
+        <field:input field="firstname" id="c_de_goldstift_photoo_domain_Person_firstname" z="4PjiozeSKJXvCZzE92YYmmaVs4c="/>
+        <field:input field="nickname" id="c_de_goldstift_photoo_domain_Person_nickname" required="true" z="7SHvf8GrcyCohnO86WYDm2HEdtc="/>
+    </form:update>
+</div>

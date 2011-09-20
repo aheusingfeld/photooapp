@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_de_goldstift_photoo_domain_Tag" items="${tags}" z="UqvBNod3zLtf833e0IoRgPHdE0A=">
+        <table:table data="${tags}" id="l_de_goldstift_photoo_domain_Tag" path="/tags" z="nco2/c1IACU9lDtuMIrrTt0yM/I=">
+            <table:column id="c_de_goldstift_photoo_domain_Tag_name" property="name" z="v2uleIkp3LeAZJNgEKLFpnTP+jM="/>
+            <table:column id="c_de_goldstift_photoo_domain_Tag_lowerCaseName" property="lowerCaseName" z="i7/dmAfPhomzY30AD1z5rz8QXZ8="/>
+        </table:table>
+    </page:list>
+</div>

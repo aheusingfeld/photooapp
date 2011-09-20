@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_de_goldstift_photoo_domain_Photo" object="${photo}" path="/photos" z="eSatsbuHOmFz7ei1N30XrW2Gph4=">
+        <field:display field="title" id="s_de_goldstift_photoo_domain_Photo_title" object="${photo}" z="EXCzR5ZdX17WHlaAog6xp7882mU="/>
+        <field:display field="description" id="s_de_goldstift_photoo_domain_Photo_description" object="${photo}" z="CT66Q5U6hcjkDu9z8Iou9mWDXmQ="/>
+        <field:display field="thumbnailFileName" id="s_de_goldstift_photoo_domain_Photo_thumbnailFileName" object="${photo}" z="z+Iqd1su8T8MUmjiYW5fEWkpX5k="/>
+        <field:display field="originalFileName" id="s_de_goldstift_photoo_domain_Photo_originalFileName" object="${photo}" z="uQg8IwzGU1YWu792GhUXclMikys="/>
+        <field:display date="true" dateTimePattern="${photo_importdate_date_format}" field="importDate" id="s_de_goldstift_photoo_domain_Photo_importDate" object="${photo}" z="UAWwOvBCUpVIxr0wNktOmIn3Vuw="/>
+        <field:display date="true" dateTimePattern="${photo_shotdate_date_format}" field="shotDate" id="s_de_goldstift_photoo_domain_Photo_shotDate" object="${photo}" z="zG7ZY9EKOSnRfiI7bawmjN4Cydo="/>
+        <field:display field="originalWidth" id="s_de_goldstift_photoo_domain_Photo_originalWidth" object="${photo}" z="s6u4s6ngT3n7r0tG+tgKv1+OsSs="/>
+        <field:display field="originalHeight" id="s_de_goldstift_photoo_domain_Photo_originalHeight" object="${photo}" z="QUZOb4GL9V/cVChgqfa6LciGJ/Y="/>
+        <field:display field="tags" id="s_de_goldstift_photoo_domain_Photo_tags" object="${photo}" z="ojmj77sdpPwf494kXR20jyUVNLg="/>
+        <field:display field="persons" id="s_de_goldstift_photoo_domain_Photo_persons" object="${photo}" z="es1DRRQQjSncgyvwvd8jBZ5QRGs="/>
+        <field:display field="events" id="s_de_goldstift_photoo_domain_Photo_events" object="${photo}" z="jsJExfyQptFl0nyDAWkdgCpWbWY="/>
+        <field:display field="folder" id="s_de_goldstift_photoo_domain_Photo_folder" object="${photo}" z="2vNOVLLWkWxfYth/Af5B1NySbzk="/>
+    </page:show>
+</div>

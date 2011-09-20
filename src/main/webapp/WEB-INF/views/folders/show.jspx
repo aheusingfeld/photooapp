@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_de_goldstift_photoo_domain_Folder" object="${folder}" path="/folders" z="qf1Gs66bMkap1Vl5saJr4b90Ubo=">
+        <field:display field="title" id="s_de_goldstift_photoo_domain_Folder_title" object="${folder}" z="Z5wvZiCKdIac7sBZaDmhSwYNy80="/>
+        <field:display date="true" dateTimePattern="${folder_importdate_date_format}" field="importDate" id="s_de_goldstift_photoo_domain_Folder_importDate" object="${folder}" z="wsVzrnax/oyruyVxdCCUzofDR/o="/>
+        <field:display field="systemPath" id="s_de_goldstift_photoo_domain_Folder_systemPath" object="${folder}" z="Z+AIgQbZl5sYmM4NAGJdpnXWICE="/>
+        <field:display field="urlPath" id="s_de_goldstift_photoo_domain_Folder_urlPath" object="${folder}" z="3dQqHfrSVF/jLCAnjZrDVf+BzNA="/>
+        <field:display field="writable" id="s_de_goldstift_photoo_domain_Folder_writable" object="${folder}" z="OHsVOqwTGKh9QyE7lWUl4BQVzNA="/>
+    </page:show>
+</div>

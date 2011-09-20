@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_de_goldstift_photoo_domain_Folder" items="${folders}" z="I6wNfTVPJGU8gMriqZlEmKk/iOE=">
+        <table:table data="${folders}" id="l_de_goldstift_photoo_domain_Folder" path="/folders" z="A0Fb7sP2L1KNgqIr635ozP7rNzQ=">
+            <table:column id="c_de_goldstift_photoo_domain_Folder_title" property="title" z="jIgmLTxiAAKR7x5pxQq9wkL2Pyw="/>
+            <table:column date="true" dateTimePattern="${folder_importdate_date_format}" id="c_de_goldstift_photoo_domain_Folder_importDate" property="importDate" z="XqrzyMenrGKezHuuPtGraoI96Rs="/>
+            <table:column id="c_de_goldstift_photoo_domain_Folder_systemPath" property="systemPath" z="Bdc57SJf6cQy6Hj0HOEVEu1E+Go="/>
+            <table:column id="c_de_goldstift_photoo_domain_Folder_urlPath" property="urlPath" z="TPiL1X0wxd4WZafveuRZWmvYZyc="/>
+            <table:column id="c_de_goldstift_photoo_domain_Folder_writable" property="writable" z="b7JhZXFCIhuQnTLPzDTE11o/DP4="/>
+        </table:table>
+    </page:list>
+</div>

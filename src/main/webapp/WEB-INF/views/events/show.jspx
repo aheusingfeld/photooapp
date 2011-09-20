@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_de_goldstift_photoo_domain_Event" object="${event}" path="/events" z="5AIrl9FdrWLCGHxp7GQPU2dfFf4=">
+        <field:display field="name" id="s_de_goldstift_photoo_domain_Event_name" object="${event}" z="JRm0bRjDNHtv/wY3jsTyawXc0xg="/>
+        <field:display date="true" dateTimePattern="${event_fromdate_date_format}" field="fromDate" id="s_de_goldstift_photoo_domain_Event_fromDate" object="${event}" z="77Qpq6neQxb50gB7uiTDEcpRx5k="/>
+        <field:display date="true" dateTimePattern="${event_todate_date_format}" field="toDate" id="s_de_goldstift_photoo_domain_Event_toDate" object="${event}" z="p/LXskUxWEb6HIsfM9O0Wp8gB40="/>
+    </page:show>
+</div>

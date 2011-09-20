@@ -1,0 +1,59 @@
+// Spring Roo 1.2.0.M1 [rev 1fa252f] log opened at 2011-09-19 23:09:32
+project de.goldstift.photoo
+jpa setup --provider HIBERNATE --database MYSQL --databaseName photooapp --userName photooapp --hostName 127.0.0.1 --password pho!00App
+
+entity --class ~.domain.Tag --activeRecord false
+field string --fieldName name --notNull --sizeMin 2
+field string --fieldName lowerCaseName --notNull --sizeMin 2
+
+entity --class ~.domain.Person --activeRecord false --testAutomatically 
+field string --fieldName lastname --notNull --sizeMin 2
+field string --fieldName firstname
+field string --fieldName nickname --notNull
+
+entity --class ~.domain.Event --activeRecord false --testAutomatically 
+field string --fieldName name --notNull --sizeMin 2
+field date --fieldName fromDate --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss"
+field date --fieldName toDate --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss"
+
+entity --class ~.domain.Folder --activeRecord false --testAutomatically 
+field string --fieldName title
+field date --fieldName importDate --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss"
+
+entity --class ~.domain.Photo --activeRecord false --testAutomatically 
+field string --fieldName title
+field string --fieldName description
+field string --fieldName thumbnailFileName --notNull
+field string --fieldName originalFileName --notNull
+field date --fieldName importDate --type java.util.Date --dateTimeFormatPattern "MS"
+field date --fieldName shotDate --type java.util.Date --dateTimeFormatPattern "MS"
+field number --fieldName originalWidth --notNull --type java.lang.Short
+field number --fieldName originalHeight --notNull --type java.lang.Short
+field set --fieldName tags --type ~.domain.Tag --cardinality MANY_TO_MANY --fetch EAGER 
+field set --fieldName persons --type ~.domain.Person --cardinality MANY_TO_MANY --fetch EAGER 
+field set --fieldName events --type ~.domain.Event --cardinality MANY_TO_MANY --fetch EAGER 
+field reference --fieldName folder --type ~.domain.Folder --cardinality MANY_TO_ONE --fetch EAGER
+
+repository jpa --interface ~.repository.TagRepository --entity ~.domain.Tag
+repository jpa --interface ~.repository.EventRepository --entity ~.domain.Event
+repository jpa --interface ~.repository.PersonRepository --entity ~.domain.Person
+repository jpa --interface ~.repository.PhotoRepository --entity ~.domain.Photo
+service --interface ~.service.TagService --entity ~.domain.Tag
+service --interface ~.service.EventService --entity ~.domain.Event
+service --interface ~.service.PersonService --entity ~.domain.Person
+service --interface ~.service.PhotoService --entity ~.domain.Photo
+
+download accept terms of use
+pgp trust --keyId 0xBF0451C0
+osgi obr url add --url http://vaadin.com/springroo/repository.xml
+osgi obr start --bundleSymbolicName com.vaadin.spring.roo.addon
+osgi obr url remove --url http://vaadin.com/springroo/repository.xml
+addon install bundle --bundleSymbolicName com.vaadin.spring.roo.addon
+osgi uninstall --bundleSymbolicName com.vaadin.spring.roo.addon
+addon remove --bundleSymbolicName com.vaadin.spring.roo.addon
+
+json all
+web mvc setup
+web mvc all --package ~.web
+perform package
+
