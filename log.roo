@@ -1,12 +1,18 @@
 // Spring Roo 1.2.0.M1 [rev 1fa252f] log opened at 2011-09-19 23:09:32
+
+// PREREQUISITES:
+// For our project we'll need a MySQL 5.1 database installed on localhost and available via default port 3306
+// To make this work perfectly you should create a database with name "photooapp" and a corresponding user having all rights for this database
+// After this open the Roo shell and type the following:
+
 project de.goldstift.photoo
 jpa setup --provider HIBERNATE --database MYSQL --databaseName photooapp --userName photooapp --hostName 127.0.0.1 --password pho!00App
 
-entity --class ~.domain.Tag --activeRecord false
+entity --class ~.domain.Tag --activeRecord false --testAutomatically
 field string --fieldName name --notNull --sizeMin 2
 field string --fieldName lowerCaseName --notNull --sizeMin 2
 
-entity --class ~.domain.Person --activeRecord false --testAutomatically 
+entity --class ~.domain.Person --activeRecord false --testAutomatically
 field string --fieldName lastname --notNull --sizeMin 2
 field string --fieldName firstname
 field string --fieldName nickname --notNull
@@ -43,17 +49,10 @@ service --interface ~.service.EventService --entity ~.domain.Event
 service --interface ~.service.PersonService --entity ~.domain.Person
 service --interface ~.service.PhotoService --entity ~.domain.Photo
 
-download accept terms of use
-pgp trust --keyId 0xBF0451C0
-osgi obr url add --url http://vaadin.com/springroo/repository.xml
-osgi obr start --bundleSymbolicName com.vaadin.spring.roo.addon
-osgi obr url remove --url http://vaadin.com/springroo/repository.xml
-addon install bundle --bundleSymbolicName com.vaadin.spring.roo.addon
-osgi uninstall --bundleSymbolicName com.vaadin.spring.roo.addon
-addon remove --bundleSymbolicName com.vaadin.spring.roo.addon
-
 json all
 web mvc setup
 web mvc all --package ~.web
 perform package
 
+// after this you can either drop the resulting WAR-File into an appserver or exit Roo Shell and run "mvn jetty:run" on the command line
+// Your application will be available at http://localhost:8080/photooapp/
