@@ -4,10 +4,9 @@
 package de.goldstift.photoo.domain;
 
 import de.goldstift.photoo.domain.Event;
-import de.goldstift.photoo.domain.Folder;
 import de.goldstift.photoo.domain.Person;
+import de.goldstift.photoo.domain.PhotoFile;
 import de.goldstift.photoo.domain.Tag;
-import java.lang.Short;
 import java.lang.String;
 import java.util.Date;
 import java.util.Set;
@@ -30,20 +29,28 @@ privileged aspect Photo_Roo_JavaBean {
         this.description = description;
     }
     
-    public String Photo.getThumbnailFileName() {
-        return this.thumbnailFileName;
+    public PhotoFile Photo.getThumbnailFile() {
+        return this.thumbnailFile;
     }
     
-    public void Photo.setThumbnailFileName(String thumbnailFileName) {
-        this.thumbnailFileName = thumbnailFileName;
+    public void Photo.setThumbnailFile(PhotoFile thumbnailFile) {
+        this.thumbnailFile = thumbnailFile;
     }
     
-    public String Photo.getOriginalFileName() {
-        return this.originalFileName;
+    public PhotoFile Photo.getPreviewFile() {
+        return this.previewFile;
     }
     
-    public void Photo.setOriginalFileName(String originalFileName) {
-        this.originalFileName = originalFileName;
+    public void Photo.setPreviewFile(PhotoFile previewFile) {
+        this.previewFile = previewFile;
+    }
+    
+    public PhotoFile Photo.getOriginalFile() {
+        return this.originalFile;
+    }
+    
+    public void Photo.setOriginalFile(PhotoFile originalFile) {
+        this.originalFile = originalFile;
     }
     
     public Date Photo.getImportDate() {
@@ -60,22 +67,6 @@ privileged aspect Photo_Roo_JavaBean {
     
     public void Photo.setShotDate(Date shotDate) {
         this.shotDate = shotDate;
-    }
-    
-    public Short Photo.getOriginalWidth() {
-        return this.originalWidth;
-    }
-    
-    public void Photo.setOriginalWidth(Short originalWidth) {
-        this.originalWidth = originalWidth;
-    }
-    
-    public Short Photo.getOriginalHeight() {
-        return this.originalHeight;
-    }
-    
-    public void Photo.setOriginalHeight(Short originalHeight) {
-        this.originalHeight = originalHeight;
     }
     
     public Set<Tag> Photo.getTags() {
@@ -100,14 +91,6 @@ privileged aspect Photo_Roo_JavaBean {
     
     public void Photo.setEvents(Set<Event> events) {
         this.events = events;
-    }
-    
-    public Folder Photo.getFolder() {
-        return this.folder;
-    }
-    
-    public void Photo.setFolder(Folder folder) {
-        this.folder = folder;
     }
     
 }

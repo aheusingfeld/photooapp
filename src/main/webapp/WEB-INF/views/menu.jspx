@@ -22,5 +22,8 @@
         <menu:category id="c_folder" z="QezR2jbtNpqIqOxvWF9s3stDAFA=">
             <menu:item id="i_folder_new" messageCode="global_menu_new" url="/folders?form" z="HVj8TJS+ECSurqbiybiueOyiVQc="/>
         </menu:category>
+        <menu:category id="c_photofile" z="109PnIOxa8qnmShiAa81fiJmx+o=">
+            <menu:item id="i_photofile_new" messageCode="global_menu_new" url="/photofiles?form" z="hXdXRQXljhLreAjJveB+G8bfxME="/>
+        </menu:category>
     </menu:menu>
 </div>

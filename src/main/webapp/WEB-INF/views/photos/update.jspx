@@ -5,15 +5,13 @@
     <form:update id="fu_de_goldstift_photoo_domain_Photo" modelAttribute="photo" path="/photos" versionField="Version" z="RuwRcqSgWtdL3FRdcpIVQue/lXA=">
         <field:input field="title" id="c_de_goldstift_photoo_domain_Photo_title" z="Tdp/JTurxodWnCyzpwfgY7Ndw1g="/>
         <field:input field="description" id="c_de_goldstift_photoo_domain_Photo_description" z="mqb3jiLD4QL9jN//6Y8/VPEvJkQ="/>
-        <field:input field="thumbnailFileName" id="c_de_goldstift_photoo_domain_Photo_thumbnailFileName" required="true" z="ZMwUlMOKHHKXBhXt4ybQYLNanpo="/>
-        <field:input field="originalFileName" id="c_de_goldstift_photoo_domain_Photo_originalFileName" required="true" z="XmPNJXCjRViUL36sesWaQ1BYD9Y="/>
         <field:datetime dateTimePattern="${photo_importdate_date_format}" field="importDate" id="c_de_goldstift_photoo_domain_Photo_importDate" z="zEVWMWXWM1kGIHU5Q1MUVmuYqdo="/>
         <field:datetime dateTimePattern="${photo_shotdate_date_format}" field="shotDate" id="c_de_goldstift_photoo_domain_Photo_shotDate" z="yO6dV9iSmpkD/2t2409dmG8kXwc="/>
-        <field:input field="originalWidth" id="c_de_goldstift_photoo_domain_Photo_originalWidth" required="true" validationMessageCode="field_invalid_integer" z="eL5Lyp9CBxCuOwT2XLTT5GxR1iw="/>
-        <field:input field="originalHeight" id="c_de_goldstift_photoo_domain_Photo_originalHeight" required="true" validationMessageCode="field_invalid_integer" z="Qciv5MhztQQ/PkcapT08h/ndT4o="/>
         <field:select field="tags" id="c_de_goldstift_photoo_domain_Photo_tags" itemValue="id" items="${tags}" multiple="true" path="/tags" z="ov7+zci+pv26BPMkWKGandHw2Z4="/>
         <field:select field="persons" id="c_de_goldstift_photoo_domain_Photo_persons" itemValue="id" items="${people}" multiple="true" path="/people" z="s5MmRlgr/yvm7EbK3/eBYzQV3xk="/>
         <field:select field="events" id="c_de_goldstift_photoo_domain_Photo_events" itemValue="id" items="${events}" multiple="true" path="/events" z="JQbMtmPrzKdZZwkRjAGs+2tPq7w="/>
-        <field:select field="folder" id="c_de_goldstift_photoo_domain_Photo_folder" itemValue="id" items="${folders}" path="/folders" z="MpIh2lm9URASgdsN7iQiLqtO5nc="/>
+        <field:select field="thumbnailFile" id="c_de_goldstift_photoo_domain_Photo_thumbnailFile" itemValue="id" items="${photofiles}" path="/photofiles" z="+LbOSpU63O794r2vWCaETQTtBlI="/>
+        <field:select field="previewFile" id="c_de_goldstift_photoo_domain_Photo_previewFile" itemValue="id" items="${photofiles}" path="/photofiles" z="P6ixf6iU8rfj5DHRjsKfK7kqnSA="/>
+        <field:select field="originalFile" id="c_de_goldstift_photoo_domain_Photo_originalFile" itemValue="id" items="${photofiles}" path="/photofiles" z="LmXiU958aMY65EXsCd52mN72vyQ="/>
     </form:update>
 </div>

@@ -6,10 +6,10 @@
         <table:table data="${photos}" id="l_de_goldstift_photoo_domain_Photo" path="/photos" z="HbYCbPAvZLNgsKYtwRYrnENufKU=">
             <table:column id="c_de_goldstift_photoo_domain_Photo_title" property="title" z="N0N9A3R1qZ5iAOcYPT+/Mww+I80="/>
             <table:column id="c_de_goldstift_photoo_domain_Photo_description" property="description" z="yqkqCBDbi7cvmHblA8i2PvwAT2c="/>
-            <table:column id="c_de_goldstift_photoo_domain_Photo_thumbnailFileName" property="thumbnailFileName" z="igMZ4nY6h9+Q+b2YZVnTWotEqf8="/>
-            <table:column id="c_de_goldstift_photoo_domain_Photo_originalFileName" property="originalFileName" z="ktRk2vxDzpCJ5qujHM6+m7/2FqM="/>
             <table:column date="true" dateTimePattern="${photo_importdate_date_format}" id="c_de_goldstift_photoo_domain_Photo_importDate" property="importDate" z="f0wh6jBQ6DANKpzhbDJVAnPIh7I="/>
-            <table:column date="true" dateTimePattern="${photo_shotdate_date_format}" id="c_de_goldstift_photoo_domain_Photo_shotDate" property="shotDate" z="5m4TdTebKmOwCsxtaS6Qu8qPh7I="/>
+            <table:column id="c_de_goldstift_photoo_domain_Photo_thumbnailFile" property="thumbnailFile" z="C7Sta0+F9fWtBjHTDRxZbtZ4KoQ="/>
+            <table:column id="c_de_goldstift_photoo_domain_Photo_previewFile" property="previewFile" z="ylPsEJgMQo9Ez7YgS8bXxqioqQY="/>
+            <table:column id="c_de_goldstift_photoo_domain_Photo_originalFile" property="originalFile" z="7J/nWyFViFRGvowLmM9oQ5iUQwM="/>
         </table:table>
     </page:list>
 </div>

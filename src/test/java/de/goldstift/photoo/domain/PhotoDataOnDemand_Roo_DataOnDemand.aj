@@ -3,11 +3,10 @@
 
 package de.goldstift.photoo.domain;
 
-import de.goldstift.photoo.domain.Folder;
 import de.goldstift.photoo.domain.Photo;
+import de.goldstift.photoo.domain.PhotoFile;
 import de.goldstift.photoo.repository.PhotoRepository;
 import de.goldstift.photoo.service.PhotoService;
-import java.lang.Short;
 import java.lang.String;
 import java.security.SecureRandom;
 import java.util.ArrayList;
@@ -39,13 +38,11 @@ privileged aspect PhotoDataOnDemand_Roo_DataOnDemand {
     public Photo PhotoDataOnDemand.getNewTransientPhoto(int index) {
         Photo obj = new Photo();
         setDescription(obj, index);
-        setFolder(obj, index);
         setImportDate(obj, index);
-        setOriginalFileName(obj, index);
-        setOriginalHeight(obj, index);
-        setOriginalWidth(obj, index);
+        setOriginalFile(obj, index);
+        setPreviewFile(obj, index);
         setShotDate(obj, index);
-        setThumbnailFileName(obj, index);
+        setThumbnailFile(obj, index);
         setTitle(obj, index);
         return obj;
     }
@@ -55,29 +52,19 @@ privileged aspect PhotoDataOnDemand_Roo_DataOnDemand {
         obj.setDescription(description);
     }
     
-    public void PhotoDataOnDemand.setFolder(Photo obj, int index) {
-        Folder folder = null;
-        obj.setFolder(folder);
-    }
-    
     public void PhotoDataOnDemand.setImportDate(Photo obj, int index) {
         Date importDate = new GregorianCalendar(Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH), Calendar.getInstance().get(Calendar.HOUR_OF_DAY), Calendar.getInstance().get(Calendar.MINUTE), Calendar.getInstance().get(Calendar.SECOND) + new Double(Math.random() * 1000).intValue()).getTime();
         obj.setImportDate(importDate);
     }
     
-    public void PhotoDataOnDemand.setOriginalFileName(Photo obj, int index) {
-        String originalFileName = "originalFileName_" + index;
-        obj.setOriginalFileName(originalFileName);
+    public void PhotoDataOnDemand.setOriginalFile(Photo obj, int index) {
+        PhotoFile originalFile = null;
+        obj.setOriginalFile(originalFile);
     }
     
-    public void PhotoDataOnDemand.setOriginalHeight(Photo obj, int index) {
-        Short originalHeight = new Integer(index).shortValue();
-        obj.setOriginalHeight(originalHeight);
-    }
-    
-    public void PhotoDataOnDemand.setOriginalWidth(Photo obj, int index) {
-        Short originalWidth = new Integer(index).shortValue();
-        obj.setOriginalWidth(originalWidth);
+    public void PhotoDataOnDemand.setPreviewFile(Photo obj, int index) {
+        PhotoFile previewFile = null;
+        obj.setPreviewFile(previewFile);
     }
     
     public void PhotoDataOnDemand.setShotDate(Photo obj, int index) {
@@ -85,9 +72,9 @@ privileged aspect PhotoDataOnDemand_Roo_DataOnDemand {
         obj.setShotDate(shotDate);
     }
     
-    public void PhotoDataOnDemand.setThumbnailFileName(Photo obj, int index) {
-        String thumbnailFileName = "thumbnailFileName_" + index;
-        obj.setThumbnailFileName(thumbnailFileName);
+    public void PhotoDataOnDemand.setThumbnailFile(Photo obj, int index) {
+        PhotoFile thumbnailFile = null;
+        obj.setThumbnailFile(thumbnailFile);
     }
     
     public void PhotoDataOnDemand.setTitle(Photo obj, int index) {

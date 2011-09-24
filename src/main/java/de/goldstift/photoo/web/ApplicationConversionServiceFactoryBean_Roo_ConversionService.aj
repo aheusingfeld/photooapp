@@ -7,6 +7,7 @@ import de.goldstift.photoo.domain.Event;
 import de.goldstift.photoo.domain.Folder;
 import de.goldstift.photoo.domain.Person;
 import de.goldstift.photoo.domain.Photo;
+import de.goldstift.photoo.domain.PhotoFile;
 import de.goldstift.photoo.domain.Tag;
 import de.goldstift.photoo.service.EventService;
 import de.goldstift.photoo.service.PersonService;
@@ -102,7 +103,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Photo, String> ApplicationConversionServiceFactoryBean.getPhotoToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<de.goldstift.photoo.domain.Photo, java.lang.String>() {
             public String convert(Photo photo) {
-                return new StringBuilder().append(photo.getTitle()).append(" ").append(photo.getDescription()).append(" ").append(photo.getThumbnailFileName()).append(" ").append(photo.getOriginalFileName()).toString();
+                return new StringBuilder().append(photo.getTitle()).append(" ").append(photo.getDescription()).append(" ").append(photo.getImportDate()).append(" ").append(photo.getShotDate()).toString();
             }
         };
     }
@@ -119,6 +120,22 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         return new org.springframework.core.convert.converter.Converter<java.lang.String, de.goldstift.photoo.domain.Photo>() {
             public de.goldstift.photoo.domain.Photo convert(String id) {
                 return getObject().convert(getObject().convert(id, Long.class), Photo.class);
+            }
+        };
+    }
+    
+    public Converter<PhotoFile, String> ApplicationConversionServiceFactoryBean.getPhotoFileToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<de.goldstift.photoo.domain.PhotoFile, java.lang.String>() {
+            public String convert(PhotoFile photoFile) {
+                return new StringBuilder().append(photoFile.getFilename()).append(" ").append(photoFile.getWidth()).append(" ").append(photoFile.getHeight()).toString();
+            }
+        };
+    }
+    
+    public Converter<String, PhotoFile> ApplicationConversionServiceFactoryBean.getStringToPhotoFileConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, de.goldstift.photoo.domain.PhotoFile>() {
+            public de.goldstift.photoo.domain.PhotoFile convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), PhotoFile.class);
             }
         };
     }
@@ -159,6 +176,8 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getPhotoToStringConverter());
         registry.addConverter(getIdToPhotoConverter());
         registry.addConverter(getStringToPhotoConverter());
+        registry.addConverter(getPhotoFileToStringConverter());
+        registry.addConverter(getStringToPhotoFileConverter());
         registry.addConverter(getTagToStringConverter());
         registry.addConverter(getIdToTagConverter());
         registry.addConverter(getStringToTagConverter());

@@ -27,11 +27,14 @@ public class Photo {
 
     private String description;
 
-    @NotNull
-    private String thumbnailFileName;
+    @ManyToOne(fetch = FetchType.EAGER)
+    private PhotoFile thumbnailFile;
 
-    @NotNull
-    private String originalFileName;
+    @ManyToOne(fetch = FetchType.EAGER)
+    private PhotoFile previewFile;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    private PhotoFile originalFile;
 
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
@@ -41,12 +44,6 @@ public class Photo {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date shotDate;
 
-    @NotNull
-    private Short originalWidth;
-
-    @NotNull
-    private Short originalHeight;
-
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Tag> tags = new HashSet<Tag>();
 
@@ -55,7 +52,4 @@ public class Photo {
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Event> events = new HashSet<Event>();
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    private Folder folder;
 }

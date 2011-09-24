@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_de_goldstift_photoo_domain_PhotoFile" items="${photofiles}" z="aI1yXxmE3e5v0wsULyC0qa/LWj8=">
+        <table:table data="${photofiles}" id="l_de_goldstift_photoo_domain_PhotoFile" path="/photofiles" z="35d+wCSXUmRGmuef4DvJWQeQ3eA=">
+            <table:column id="c_de_goldstift_photoo_domain_PhotoFile_folder" property="folder" z="kqGZRymRe+TXyY+Kh4iqzWpwV+s="/>
+            <table:column id="c_de_goldstift_photoo_domain_PhotoFile_filename" property="filename" z="oXVNN4LJ0K4wfVPoqw2lKeAhvH8="/>
+            <table:column id="c_de_goldstift_photoo_domain_PhotoFile_width" property="width" z="XkkbUHrwUjgyOOsGLqnLt0Uw+vo="/>
+            <table:column id="c_de_goldstift_photoo_domain_PhotoFile_height" property="height" z="z+MFcqueI1j8ZyPX6NlrCWc2utA="/>
+        </table:table>
+    </page:list>
+</div>

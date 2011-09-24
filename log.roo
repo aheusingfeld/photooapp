@@ -64,5 +64,3 @@ perform package
 
 // after this you can either drop the resulting WAR-File into an appserver or exit Roo Shell and run "mvn jetty:run" on the command line
 // Your application will be available at http://localhost:8080/photooapp/
-
-// Spring Roo 1.2.0.M1 [rev 1fa252f] log opened at 2011-09-24 21:55:44
