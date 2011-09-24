@@ -24,21 +24,29 @@ field date --fieldName toDate --type java.util.Date --dateTimeFormatPattern "yyy
 
 entity --class ~.domain.Folder --activeRecord false --testAutomatically 
 field string --fieldName title
-field date --fieldName importDate --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss"
+field date --fieldName createDate --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss"
+field string --fieldName systemPath --notNull --sizeMin 1
+field string --fieldName urlPath --notNull --sizeMin 1
+field boolean --fieldName writable --primitive false
+
+entity --class ~.domain.PhotoFile --activeRecord false --testAutomatically 
+field reference --fieldName folder --type ~.domain.Folder --cardinality MANY_TO_ONE --fetch EAGER
+field string --fieldName filename --notNull
+field number --fieldName width --notNull --type java.lang.Short
+field number --fieldName height --notNull --type java.lang.Short
 
 entity --class ~.domain.Photo --activeRecord false --testAutomatically 
 field string --fieldName title
 field string --fieldName description
-field string --fieldName thumbnailFileName --notNull
-field string --fieldName originalFileName --notNull
+field string --fieldName thumbnail --notNull
+field reference --fieldName thumbnailFile --type ~.domain.PhotoFile --cardinality MANY_TO_ONE --fetch EAGER
+field reference --fieldName previewFile --type ~.domain.PhotoFile --cardinality MANY_TO_ONE --fetch EAGER
+field reference --fieldName originalFile --type ~.domain.PhotoFile --cardinality MANY_TO_ONE --fetch EAGER
 field date --fieldName importDate --type java.util.Date --dateTimeFormatPattern "MS"
 field date --fieldName shotDate --type java.util.Date --dateTimeFormatPattern "MS"
-field number --fieldName originalWidth --notNull --type java.lang.Short
-field number --fieldName originalHeight --notNull --type java.lang.Short
 field set --fieldName tags --type ~.domain.Tag --cardinality MANY_TO_MANY --fetch EAGER 
 field set --fieldName persons --type ~.domain.Person --cardinality MANY_TO_MANY --fetch EAGER 
 field set --fieldName events --type ~.domain.Event --cardinality MANY_TO_MANY --fetch EAGER 
-field reference --fieldName folder --type ~.domain.Folder --cardinality MANY_TO_ONE --fetch EAGER
 
 repository jpa --interface ~.repository.TagRepository --entity ~.domain.Tag
 repository jpa --interface ~.repository.EventRepository --entity ~.domain.Event
@@ -56,3 +64,5 @@ perform package
 
 // after this you can either drop the resulting WAR-File into an appserver or exit Roo Shell and run "mvn jetty:run" on the command line
 // Your application will be available at http://localhost:8080/photooapp/
+
+// Spring Roo 1.2.0.M1 [rev 1fa252f] log opened at 2011-09-24 21:55:44
