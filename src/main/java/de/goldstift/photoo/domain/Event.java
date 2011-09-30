@@ -22,10 +22,10 @@ public class Event {
     private String name;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(pattern = "MS")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     private Date fromDate;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(pattern = "MM")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     private Date toDate;
 }

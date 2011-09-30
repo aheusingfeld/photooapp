@@ -13,7 +13,7 @@ import org.springframework.web.util.WebUtils;
 privileged aspect FolderController_Roo_Controller {
     
     void FolderController.addDateTimeFormatPatterns(Model uiModel) {
-        uiModel.addAttribute("folder_importdate_date_format", "yyyy-MM-dd HH:mm:ss");
+        uiModel.addAttribute("folder_importdate_date_format", "yyyy-MM-dd HH:mm");
     }
     
     String FolderController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

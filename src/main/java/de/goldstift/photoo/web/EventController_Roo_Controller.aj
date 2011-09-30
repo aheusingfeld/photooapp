@@ -105,8 +105,8 @@ privileged aspect EventController_Roo_Controller {
     }
     
     void EventController.addDateTimeFormatPatterns(Model uiModel) {
-        uiModel.addAttribute("event_fromdate_date_format", "MS");
-        uiModel.addAttribute("event_todate_date_format", "MM");
+        uiModel.addAttribute("event_fromdate_date_format", "yyyy-MM-dd HH:mm");
+        uiModel.addAttribute("event_todate_date_format", "yyyy-MM-dd HH:mm");
     }
     
     String EventController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {
