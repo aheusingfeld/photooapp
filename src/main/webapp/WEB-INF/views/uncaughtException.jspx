@@ -4,24 +4,48 @@
   <spring:message var="title" code="error_uncaughtexception_title" htmlEscape="false" />
   <util:panel id="title" title="${title}">
     <h2>${fn:escapeXml(title)}</h2>
-    <p>
-      <spring:message code="error_uncaughtexception_problemdescription" />
-    </p>
     <c:if test="${not empty exception}">
-      <p>
-        <h4>
-          <spring:message code="exception_details" />
-        </h4>
-        <spring:message var="message" code="exception_message" htmlEscape="false" />
-        <util:panel id="_message" title="${message}" openPane="false">
-          <c:out value="${exception.localizedMessage}" />
-        </util:panel>
+    <p>
+          <b><spring:message code="${exception.message}" /></b>
+			</p>
+			<p><h4><spring:message code="exceptions_originalmessage" />: </h4>
+				<ul>
+				<li><c:out value="${exception.rootCause.message}" /></li>
+				<li><c:out value="${exception.originalException.message}" /></li>
+				</ul>
+			</p>
+			<p>
         <spring:message var="stacktrace" code="exception_stacktrace" htmlEscape="false" />
         <util:panel id="_exception" title="${stacktrace}" openPane="false">
-          <c:forEach items="${exception.stackTrace}" var="trace">
-            <c:out value="${trace}" />
-            <br />
-          </c:forEach>
+				<div id="_stacktrace">
+					<pre>
+					<c:out value="${exception.cause}"/><br/>
+					<c:forEach items="${exception.cause.stackTrace}" var="trace">	at <c:out value="${trace}"/><br/></c:forEach>
+
+					<c:if test="${not empty exception.cause.cause}">
+						<c:set var="cause" value="${exception.cause.cause}"/>
+						<c:out value="Caused by: ${cause}"/><br/>
+						<c:forEach items="${cause.stackTrace}" var="trace">	at <c:out value="${trace}"/><br/></c:forEach>
+
+<!-- resolve the causes - depth = 4 -->
+						<c:if test="${not empty exception.cause.cause.cause}">
+							<c:set var="cause" value="${exception.cause.cause.cause}"/>
+							<c:out value="Caused by: ${cause}"/><br/>
+							<c:forEach items="${cause.stackTrace}" var="trace">	at <c:out value="${trace}"/><br/></c:forEach>
+							<c:if test="${not empty exception.cause.cause.cause.cause}">
+								<c:set var="cause" value="${exception.cause.cause.cause.cause}"/>
+								<c:out value="Caused by: ${cause}"/><br/>
+								<c:forEach items="${cause.stackTrace}" var="trace">	at <c:out value="${trace}"/><br/></c:forEach>
+								<c:if test="${not empty exception.cause.cause.cause.cause.cause}">
+									<c:set var="cause" value="${exception.cause.cause.cause.cause.cause}"/>
+									<c:out value="Caused by: ${cause}"/><br/>
+									<c:forEach items="${cause.stackTrace}" var="trace">	at <c:out value="${trace}"/><br/></c:forEach>
+								</c:if>
+							</c:if>
+						</c:if>
+					</c:if>
+					</pre>
+				</div>
         </util:panel>
       </p>
     </c:if>
