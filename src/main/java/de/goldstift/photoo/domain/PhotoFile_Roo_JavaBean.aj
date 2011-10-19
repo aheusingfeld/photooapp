@@ -4,6 +4,7 @@
 package de.goldstift.photoo.domain;
 
 import de.goldstift.photoo.domain.Folder;
+import java.lang.Integer;
 import java.lang.Short;
 import java.lang.String;
 
@@ -39,6 +40,14 @@ privileged aspect PhotoFile_Roo_JavaBean {
     
     public void PhotoFile.setHeight(Short height) {
         this.height = height;
+    }
+    
+    public Integer PhotoFile.getFileSize() {
+        return this.fileSize;
+    }
+    
+    public void PhotoFile.setFileSize(Integer fileSize) {
+        this.fileSize = fileSize;
     }
     
 }

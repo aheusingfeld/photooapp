@@ -9,6 +9,7 @@ privileged aspect PhotoFile_Roo_ToString {
     
     public String PhotoFile.toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append("FileSize: ").append(getFileSize()).append(", ");
         sb.append("Filename: ").append(getFilename()).append(", ");
         sb.append("Folder: ").append(getFolder()).append(", ");
         sb.append("Height: ").append(getHeight()).append(", ");

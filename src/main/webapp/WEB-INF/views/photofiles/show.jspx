@@ -7,5 +7,6 @@
         <field:display field="filename" id="s_de_goldstift_photoo_domain_PhotoFile_filename" object="${photofile}" z="LDCHK2q2O0NmakA9+m4KSxOxgMs="/>
         <field:display field="width" id="s_de_goldstift_photoo_domain_PhotoFile_width" object="${photofile}" z="Hv9w1oCgJne2lWD0mZEfd/TWIos="/>
         <field:display field="height" id="s_de_goldstift_photoo_domain_PhotoFile_height" object="${photofile}" z="u/E0Y+mybcWyDkG2ciebdAIbLL4="/>
+        <field:display field="fileSize" id="s_de_goldstift_photoo_domain_PhotoFile_fileSize" object="${photofile}" z="p/qUZ47+wLCiK9y3Oir+R3EFNUE="/>
     </page:show>
 </div>

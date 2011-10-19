@@ -7,6 +7,7 @@
         <field:input field="filename" id="c_de_goldstift_photoo_domain_PhotoFile_filename" min="1" required="true" z="U7b0ICRAKWiPLomgYB0zllYtGEw="/>
         <field:input field="width" id="c_de_goldstift_photoo_domain_PhotoFile_width" required="true" validationMessageCode="field_invalid_integer" z="2YAeGh6HxXk6YTWjslqzRZmxb0w="/>
         <field:input field="height" id="c_de_goldstift_photoo_domain_PhotoFile_height" required="true" validationMessageCode="field_invalid_integer" z="/4sdy1+Z5yFRzZ7GwmCjHn657AU="/>
+        <field:input field="fileSize" id="c_de_goldstift_photoo_domain_PhotoFile_fileSize" validationMessageCode="field_invalid_integer" z="P0eTrgZMctgArQKfDqARzTtIb6I="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_de_goldstift_photoo_domain_PhotoFile" render="${not empty dependencies}" z="myfnOT4YGDaWsFIKmyi74QRU65Q="/>
 </div>

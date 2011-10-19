@@ -127,7 +127,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<PhotoFile, String> ApplicationConversionServiceFactoryBean.getPhotoFileToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<de.goldstift.photoo.domain.PhotoFile, java.lang.String>() {
             public String convert(PhotoFile photoFile) {
-                return new StringBuilder().append(photoFile.getFilename()).append(" ").append(photoFile.getWidth()).append(" ").append(photoFile.getHeight()).toString();
+                return new StringBuilder().append(photoFile.getFilename()).append(" ").append(photoFile.getWidth()).append(" ").append(photoFile.getHeight()).append(" ").append(photoFile.getFileSize()).toString();
             }
         };
     }

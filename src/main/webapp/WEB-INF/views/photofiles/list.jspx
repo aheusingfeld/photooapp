@@ -8,6 +8,7 @@
             <table:column id="c_de_goldstift_photoo_domain_PhotoFile_filename" property="filename" z="oXVNN4LJ0K4wfVPoqw2lKeAhvH8="/>
             <table:column id="c_de_goldstift_photoo_domain_PhotoFile_width" property="width" z="XkkbUHrwUjgyOOsGLqnLt0Uw+vo="/>
             <table:column id="c_de_goldstift_photoo_domain_PhotoFile_height" property="height" z="z+MFcqueI1j8ZyPX6NlrCWc2utA="/>
+            <table:column id="c_de_goldstift_photoo_domain_PhotoFile_fileSize" property="fileSize" z="tNV/GqsZeBtp9Avgk+DYmyGbkSg="/>
         </table:table>
     </page:list>
 </div>
