@@ -1,6 +1,8 @@
 package de.goldstift.photoo.domain;
 
 import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
@@ -23,10 +25,12 @@ public class Folder {
 
     @NotNull
     @Size(min = 1)
+    @Column(unique = true)
     private String systemPath;
 
     @NotNull
     @Size(min = 1)
+    @Column(unique = true)
     private String urlPath;
 
     private Boolean writable;

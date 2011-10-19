@@ -1,5 +1,6 @@
 package de.goldstift.photoo.domain;
 
+import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import org.springframework.roo.addon.entity.RooJpaEntity;
@@ -20,5 +21,6 @@ public class Person {
     private String firstname;
 
     @NotNull
+    @Column(unique = true)
     private String nickname;
 }
