@@ -5,13 +5,15 @@ package de.goldstift.photoo.util.images;
 
 import java.awt.Dimension;
 import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import javax.imageio.ImageIO;
+
 import org.springframework.integration.Message;
-import org.springframework.integration.MessageHandlingException;
 import org.springframework.integration.MessageRejectedException;
 import org.springframework.integration.support.MessageBuilder;
 import org.springframework.integration.transformer.MessageTransformationException;
@@ -109,14 +111,14 @@ public class ImageScalingTransformer implements Transformer
     public File scaleImageFile(final File sourceFile, final Dimension tDim, final String imageTargetFileName) throws IOException,
             FileNotFoundException
     {
-        File targetFile = new File(imageTargetFileName);
-        Image newImg = javax.imageio.ImageIO.read(sourceFile).getScaledInstance(tDim.width,
+        final File targetFile = new File(imageTargetFileName);
+        final Image newImg = ImageIO.read(sourceFile).getScaledInstance(tDim.width,
                 tDim.height, Image.SCALE_SMOOTH);
-        java.awt.image.BufferedImage bim = new java.awt.image.BufferedImage(tDim.width,
-                tDim.height, java.awt.image.BufferedImage.TYPE_INT_RGB);
+        final BufferedImage bim = new BufferedImage(tDim.width,
+                tDim.height, BufferedImage.TYPE_INT_RGB);
         bim.createGraphics().drawImage(newImg, 0, 0, null);
-        FileOutputStream fos = new FileOutputStream(targetFile, false);
-        javax.imageio.ImageIO.write(bim, defaultImageType, fos);
+        final FileOutputStream fos = new FileOutputStream(targetFile, false);
+        ImageIO.write(bim, defaultImageType, fos);
         fos.close();
         return targetFile;
     }
